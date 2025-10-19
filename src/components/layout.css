@@ -1,0 +1,317 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #181818;
+  color: #fff;
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  padding: 8px 24px;
+  position: relative;
+}
+
+/* === HEADER (Logo + Menu) === */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo-desktop {
+  display: block;
+  width: 90px;
+  height: 30px;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+
+/* === MENU === */
+.menu {
+  display: flex;
+  gap: 24px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.08em;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.menu a:hover {
+  color: #1a4afc;
+}
+
+/* === PROFILE DROPDOWN === */
+.profile-dropdown {
+  position: relative;
+}
+
+.profile-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #444;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: #333;
+  border-radius: 8px;
+  min-width: 180px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background: #444;
+}
+
+
+
+/* ===============================
+   Footer Desktop
+================================= */
+.chill-footer {
+  background: #0b0b0d;
+  color: #d8d8dc;
+  border-top: 1px solid #1f1f24;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+}
+
+.chill-footer a {
+  color: #d8d8dc;
+  text-decoration: none;
+}
+
+.chill-footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 40px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.footer-brand .logo-footer {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.footer-brand .logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-brand .copyright {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #9b9ba1;
+}
+
+.footer-title {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-list li + li {
+  margin-top: 8px;
+}
+
+.footer-col {
+  min-width: 220px;
+}
+
+/* ===============================
+   Footer Mobile (Tanpa JS)
+================================= */
+.footer-mobile {
+  display: none;
+  padding: 0 16px 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  border-top: 1px solid #1f1f24;
+}
+
+.footer-mobile details {
+  background: transparent;
+  border: none;
+  margin-bottom: 10px;
+  color: #d8d8dc;
+  font-size: 14px;
+}
+
+.footer-mobile summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+}
+
+.footer-mobile summary i {
+  color: #ffffff;
+  transition: transform 0.3s ease;
+  font-size: 14px;
+}
+
+.footer-mobile details[open] summary i {
+  transform: rotate(90deg);
+}
+
+.acc-list {
+  list-style: none;
+  padding: 6px 16px 12px;
+  margin: 0;
+}
+
+.acc-list li a {
+  display: block;
+  padding: 10px 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #d8d8dc;
+  text-decoration: none;
+}
+
+.acc-list li a:hover {
+  background: #181820;
+  color: #ffffff;
+}
+
+/* ===============================
+   Footer Mobile Brand
+================================= */
+.mobile-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 16px 4px;
+  gap: 4px;
+}
+
+.mobile-brand .logo-footer {
+  height: 24px;
+}
+
+/* ===============================
+   Aksesibilitas Fokus
+================================= */
+.footer-list a:focus-visible,
+.acc-list a:focus-visible,
+.logo-link:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #6ea8ff;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (max-width: 500px) {
+/* === Header === */
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+  }
+
+  .header {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .logo-desktop {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: block;
+  }
+
+  .logo-mobile {
+    width: 20px;
+    height: auto;
+  }
+
+  .menu {
+    gap: 12px;
+  }
+
+  .menu a {
+    font-size: 0.8em;
+  }
+
+  .dropdown-content {
+    min-width: 120px;
+  }
+
+  .profile-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .profile-dropdown {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 10px;
+  }
+
+  
+  /* footer   */
+  .footer-inner {
+    display: none;
+  }
+
+  .footer-mobile {
+    display: block;
+  }
+
+  .chill-footer {
+    border-top: 1px solid #1a1a1f;
+  }
+}
