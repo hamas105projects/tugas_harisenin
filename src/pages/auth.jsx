@@ -27,7 +27,8 @@ const Auth = () => {
   };
 
   return (
-    <body style={mode === 'login' ? loginStyle : registerStyle}>
+    <section className='auth-wrapper' style={mode === 'login' ? loginStyle : registerStyle}>
+
       <div className="container">
         <div className="form-box">
           <div className="logo-wrapper">
@@ -35,7 +36,7 @@ const Auth = () => {
           </div>
 
           <h2>{mode === 'login' ? 'Masuk' : 'Daftar'}</h2>
-          <p className="welcome">Selamat datang! {mode === 'login' ? 'Kembali' : ''}</p>
+          <p className="welcome">Selamat datang {mode === 'login' ? 'kembali' : ''}!</p>
 
           <form>
             <label htmlFor="username">Username</label>
@@ -102,7 +103,7 @@ const Auth = () => {
           </button>
         </div>
       </div>
-    </body>
+    </section>
   );
 };
 
