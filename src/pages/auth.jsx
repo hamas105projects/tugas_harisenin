@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import LogoLarge from '../components/logoLarge';
+import LogoLarge from '../components/logoBig';
 import './style/auth.css';
 import './style/root.css';
 import loginBg from '../assets/header/login.jpg';
 import registerBg from '../assets/header/register.jpg';
 import googleIcon from '../assets/header/google-icon.png';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -17,17 +18,36 @@ const Auth = () => {
   const togglePasswordConfirm = () => setShowPasswordConfirm(!showPasswordConfirm);
 
   const loginStyle = {
-    background: `url(${loginBg}) no-repeat center center`,
+    background: `url(${loginBg}) no-repeat center center fixed`,
     backgroundSize: 'cover',
   };
 
   const registerStyle = {
-    background: `url(${registerBg}) no-repeat center center`,
+    background: `url(${registerBg}) no-repeat center center fixed`,
     backgroundSize: 'cover',
   };
+  const navigate = useNavigate();
+const [username, setUsername] = useState('');
+const [password, setPassword] = useState('');
+const [error, setError] = useState('');
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const validUser = { username: 'admin', password: '123456' };
+  if (mode === 'login') {
+    if (username === validUser.username && password === validUser.password) {
+      navigate('/');
+    } else {
+      setError('Username atau password salah');
+    }
+  }
+};
+
 
   return (
-    <section className='auth-wrapper' style={mode === 'login' ? loginStyle : registerStyle}>
+    <>
+    <div className='auth-wrapper' style={mode === 'login' ? loginStyle : registerStyle}></div>
+    <section >
 
       <div className="container">
         <div className="form-box">
@@ -38,9 +58,15 @@ const Auth = () => {
           <h2>{mode === 'login' ? 'Masuk' : 'Daftar'}</h2>
           <p className="welcome">Selamat datang {mode === 'login' ? 'kembali' : ''}!</p>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <label htmlFor="username">Username</label>
-            <input type="text" id="username" placeholder="Masukkan username" />
+            <input 
+            type="text" 
+            id="username" 
+            placeholder="Masukkan username" 
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            />
 
             <label htmlFor="password">{mode === 'login' ? 'Kata Sandi' : 'Buat Kata Sandi'}</label>
             <div className="input-group">
@@ -48,6 +74,8 @@ const Auth = () => {
                 type={showPasswordMain ? 'text' : 'password'}
                 id="password"
                 placeholder="Masukkan kata sandi"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <span className="toggle-password" onClick={togglePasswordMain}>
                 <i className="fas fa-eye-slash" style={{ display: showPasswordMain ? 'block' : 'none' }} />
@@ -71,6 +99,8 @@ const Auth = () => {
                 </div>
               </>
             )}
+            
+          {error && <p className="error">{error}</p>}
 
             <button type="submit" className="btn-primary">
               {mode === 'login' ? 'Masuk' : 'Daftar'}
@@ -104,6 +134,7 @@ const Auth = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

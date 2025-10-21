@@ -1,107 +1,8 @@
-body {
-  margin: 0;
-  padding: 0;
-  background: #181818;
-  color: #fff;
-}
-
-/* === NAVBAR === */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #222;
-  padding: 8px 24px;
-  position: relative;
-}
-
-/* === HEADER (Logo + Menu) === */
-.header {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.logo-desktop {
-  display: block;
-  width: 90px;
-  height: 30px;
-}
-
-.logo-mobile {
-  display: none;
-}
-
-
-/* === MENU === */
-.menu {
-  display: flex;
-  gap: 24px;
-}
-
-.menu a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.08em;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.menu a:hover {
-  color: #1a4afc;
-}
-
-/* === PROFILE DROPDOWN === */
-.profile-dropdown {
-  position: relative;
-}
-
-.profile-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid #444;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 40px;
-  background: #333;
-  border-radius: 8px;
-  min-width: 180px;
-  z-index: 2;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid #444;
-}
-
-.dropdown-content a:last-child {
-  border-bottom: none;
-}
-
-.dropdown-content a:hover {
-  background: #444;
-}
-
-
-
-/* ===============================
-   Footer Desktop
-================================= */
 .chill-footer {
   background: #0b0b0d;
   color: #d8d8dc;
   border-top: 1px solid #1f1f24;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+  font-family: lato, 'sego-ui', 'sans-shrif';
 }
 
 .chill-footer a {
@@ -133,6 +34,8 @@ body {
 .footer-brand .logo-link {
   display: inline-flex;
   align-items: center;
+  font-family: 'Londrina Solid', cursive;
+  font-size: 4vh;
 }
 
 .footer-brand .copyright {
@@ -252,56 +155,7 @@ summary:focus-visible {
 }
 
 @media (max-width: 500px) {
-/* === Header === */
-  .navbar {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 12px;
-  }
 
-  .header {
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .logo-desktop {
-    display: none;
-  }
-
-  .logo-mobile {
-    display: block;
-  }
-
-  .logo-mobile {
-    width: 20px;
-    height: auto;
-  }
-
-  .menu {
-    gap: 12px;
-  }
-
-  .menu a {
-    font-size: 0.8em;
-  }
-
-  .dropdown-content {
-    min-width: 120px;
-  }
-
-  .profile-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .profile-dropdown {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    font-size: 10px;
-  }
-
-  
   /* footer   */
   .footer-inner {
     display: none;

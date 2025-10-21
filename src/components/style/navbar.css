@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #181818;
+  color: #fff;
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  padding: 8px 24px;
+  position: relative;
+}
+
+/* === HEADER (Logo + Menu) === */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo-desktop {
+  display: block;
+  max-width: 0px;
+  max-height: 10px;
+  margin: 0 auto;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+
+/* === MENU === */
+.menu {
+  display: flex;
+  gap: 24px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.08em;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.menu a:hover {
+  color: #1a4afc;
+}
+
+/* === PROFILE DROPDOWN === */
+.profile-dropdown {
+  position: relative;
+}
+
+.profile-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #444;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: #333;
+  border-radius: 8px;
+  min-width: 180px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background: #444;
+}
+
+
+

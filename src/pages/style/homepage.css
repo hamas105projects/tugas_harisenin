@@ -1,0 +1,424 @@
+/* === RESET & BASE === */
+body {
+  margin: 0;
+  padding: 0;
+  background: #181818;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+.scaffold{
+    display: block;
+}
+/* === HERO SECTION === */
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+  min-height: 390px;
+  background: #222;
+}
+.hero-bg {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  display: block;
+}
+.hero-content {
+  position: absolute;
+  left: 3vw;
+  right: 3vw;
+  top: clamp(100px, 15vw, 200px);
+  z-index: 2;
+}
+
+/* === HERO TEXT === */
+.hero-content h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.hero-content p {
+  font-size: 1.1em;
+  max-width: 80%;
+  margin-bottom: 20px;
+}
+
+/* === HERO BUTTONS === */
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex-wrap: wrap;
+}
+.primary {
+  background: #1a4afc;
+  color: #fff;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.primary:hover {
+  background: #003ed8;
+}
+.secondary {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.secondary:hover {
+  background: #555;
+}
+.age {
+  background: #181818;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 26px;
+  padding: 4px 10px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* === VOLUME BUTTON === */
+.volume-btn {
+  margin-left: auto;
+  background: #fff;
+  border: 1px solid #656363;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.11);
+  transition: background 0.2s;
+}
+.volume-btn:hover {
+  background: #e6e6e6;
+}
+.volume-btn img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  display: block;
+}
+
+/* === CONTINUE WATCHING SECTION === */
+.profile-container {
+  position: relative;
+  width: 100%;
+  max-width: 1210px;
+  padding: 0 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.card-wrapper {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  height: 220px;
+  width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.card-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.profile-card {
+  position: relative;
+  flex-shrink: 0;
+  width: 286px;
+  min-width: 286px;
+  height: 190px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  background: #222;
+  transition: transform 0.2s;
+}
+.profile-card:hover {
+  transform: scale(1.04);
+}
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.description {
+  position: relative;
+  z-index: 2;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 10px 10px 10px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 70%);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-size: 1rem;
+  min-height: 60px;
+}
+
+/* === ARROW BUTTONS (CONTINUE WATCHING) === */
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 1px solid rgb(148, 143, 143);
+  cursor: pointer;
+  z-index: 10;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 18px;
+  padding: 0;
+  transition: background 0.2s, border 0.2s;
+}
+.arrow-btn:hover {
+  background-color: #444;
+  border-color: #fff;
+}
+#left-arrow {
+  left: 0px;
+}
+#right-arrow {
+  right: 10px;
+}
+
+/* === MAIN WRAPPER === */
+.main-wrapper {
+  color: #fff;
+  padding: 2rem;
+}
+
+/* === CAROUSEL SECTIONS === */
+.movie-carousel-section {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto 2.5rem auto;
+}
+h4 {
+  color: aliceblue;
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+}
+
+/* === CAROUSEL LIST === */
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+.movie-list {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  max-height: 300px;
+  gap: 20px;
+  padding-bottom: 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.movie-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* === MOVIE ITEM === */
+.movie-item {
+  position: relative;
+  flex-shrink: 0;
+  width: 210px;
+  min-width: 210px;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  cursor: pointer;
+  background: #232323;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.movie-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+.movie-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* === BADGES === */
+.fresh-episode-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #0052cc;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.14);
+}
+.top10-badge {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  background: #e50914;
+  color: white;
+  font-weight: bold;
+  font-size: 0.6em;
+  padding: 0 4px 10px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.22);
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+.top10-badge p {
+  margin-bottom: 10px;
+}
+
+/* === CAROUSEL NAVIGATION BUTTONS === */
+.button-slide {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 2px solid rgba(164, 155, 155, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 3;
+  transition: background 0.2s, border 0.2s;
+}
+.button-slide:hover {
+  background-color: #232323;
+  border-color: #fff;
+}
+.prev-button {
+  left: -20px;
+}
+.next-button {
+  right: 2px;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 900px) {
+  .movie-carousel-section {
+    max-width: 98vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .profile-container {
+    max-width: 98vw;
+    padding: 0 2vw;
+  }
+}
+@media (max-width: 500px) {
+  .hero {
+    min-height: 260px;
+  }
+  .hero-bg {
+    height: 260px;
+  }
+  .hero-content {
+    top: 70px;
+    left: 12px;
+    right: 12px;
+  }
+  .hero-content h1 {
+    font-size: 1.1em;
+  }
+  .hero-content p {
+    font-size: 0.7em;
+    max-width: 100%;
+  }
+  .hero-buttons {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .primary,
+  .secondary,
+  .age {
+    font-size: 0.88em;
+    padding: 6px 10px;
+  }
+  .volume-btn {
+    width: 25px;
+    height: 25px;
+  }
+  /* lanjutkan nonton */
+  .profile-card {
+    min-width: 120px;
+    width: 120px;
+    height: 120px;
+  }
+  .card-wrapper {
+    height: 130px;
+    gap: 8px;
+  }
+  .profile-container {
+    padding: 0 5px;
+  }
+  .arrow-btn {
+    display: none !important;
+  }
+  h4 {
+    font-size: 1.1rem;
+  }
+  .movie-carousel-section {
+    margin: 0 8px;
+  }
+  .movie-item {
+    width: 120px;
+    min-width: 120px;
+    height: 170px;
+    gap: 4px;
+  }
+  .button-slide {
+    display: none !important;
+  }
+  .top10-badge {
+    font-size: 0.41rem;
+    padding: 0 2px 7px;
+  }
+  .top10-badge p {
+    margin-bottom: 2px;
+  }
+  .fresh-episode-badge {
+    font-size: 0.44rem;
+    padding: 0.13rem 0.22rem;
+    left: 5px;
+    top: 5px;
+  }
+}
