@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Navbar from '../components/navbar';
-import Footer from '../components/Footer';
+import Footer from '../components/footer';
 import volumeUp from '../assets/header/volume-up.png';
 import volumeMute from '../assets/header/mute.png';
 import './style/homepage.css';
@@ -166,7 +166,7 @@ const Homepage = () => {
   const continueRef = useRef(null);
 
   // Carousel section refs
-  const carouselRefs = [useRef(null), useRef(null), useRef(null)];
+  const carouselRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
 
   // Scroll handler for continue watching
   const handleContinueScroll = (dir) => {
@@ -189,6 +189,177 @@ const Homepage = () => {
     <>
       <div className='scaffold'><Navbar /></div>
       
+      
+      {/* Hero Section - First Row: Landscape Image with Caption */}
+       <div className="hero">
+        <img 
+          src="/poster/Duty After School.png" 
+          alt="Duty After School" 
+          className="hero-bg" 
+        />
+        <div className="hero-content">
+          <h1>Duty After School</h1>
+          <p>When mysterious spheres appear in the sky, students are forced to participate in a deadly game that will determine humanity's fate.</p>
+          <div className="hero-buttons">
+            <button className="primary">▶ Play</button>
+            <button className="secondary">+ My List</button>
+            <div className="age">13+</div>
+            <button 
+              className="volume-btn" 
+              onClick={() => setMuted(!muted)}
+            >
+              <img 
+                src={muted ? volumeMute : volumeUp} 
+                alt={muted ? "Unmute" : "Mute"} 
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Second Row: Continue Watching */}
+      <div className="main-wrapper">
+        <div className="movie-carousel-section">
+          <h4>Continue Watching</h4>
+          <div className="carousel-container">
+            <div className="movie-list" ref={carouselRefs[0]}>
+              {continueWatching.map((movie, index) => (
+                <div key={index} className="movie-item">
+                  <img src={movie.img} alt={movie.title} />
+                  <div className="description">
+                    <span>{movie.title}</span>
+                    <span>⭐ {movie.rating}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <button 
+              className="button-slide prev-button" 
+              onClick={() => handleCarouselScroll(0, -1)}
+            >
+              ‹
+            </button>
+            <button 
+              className="button-slide next-button" 
+              onClick={() => handleCarouselScroll(0, 1)}
+            >
+              ›
+            </button>
+          </div>
+        </div>
+
+        {/* Third Row: Top Rating */}
+        <div className="movie-carousel-section">
+          <h4>Top Rating</h4>
+          <div className="carousel-container">
+            <div className="movie-list" ref={carouselRefs[1]}>
+              {topRatingMovies.map((movie, index) => (
+                <div key={index} className="movie-item">
+                  <img src={movie.img} alt={movie.alt} />
+                  {movie.top10 && (
+                    <div className="top10-badge">
+                      <p>TOP</p>
+                      <p>10</p>
+                    </div>
+                  )}
+                  {movie.badge && (
+                    <div className="fresh-episode-badge">
+                      {movie.badge}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            <button 
+              className="button-slide prev-button" 
+              onClick={() => handleCarouselScroll(1, -1)}
+            >
+              ‹
+            </button>
+            <button 
+              className="button-slide next-button" 
+              onClick={() => handleCarouselScroll(1, 1)}
+            >
+              ›
+            </button>
+          </div>
+        </div>
+
+        {/* Fourth Row: Trending */}
+        <div className="movie-carousel-section">
+          <h4>Trending</h4>
+          <div className="carousel-container">
+            <div className="movie-list" ref={carouselRefs[2]}>
+              {trendingMovies.map((movie, index) => (
+                <div key={index} className="movie-item">
+                  <img src={movie.img} alt={movie.alt} />
+                  {movie.top10 && (
+                    <div className="top10-badge">
+                      <p>TOP</p>
+                      <p>10</p>
+                    </div>
+                  )}
+                  {movie.badge && (
+                    <div className="fresh-episode-badge">
+                      {movie.badge}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            <button 
+              className="button-slide prev-button" 
+              onClick={() => handleCarouselScroll(2, -1)}
+            >
+              ‹
+            </button>
+            <button 
+              className="button-slide next-button" 
+              onClick={() => handleCarouselScroll(2, 1)}
+            >
+              ›
+            </button>
+          </div>
+        </div>
+
+        {/* Fifth Row: New Release */}
+        <div className="movie-carousel-section">
+          <h4>New Release</h4>
+          <div className="carousel-container">
+            <div className="movie-list" ref={carouselRefs[3]}>
+              {newReleaseMovies.map((movie, index) => (
+                <div key={index} className="movie-item">
+                  <img src={movie.img} alt={movie.alt} />
+                  {movie.top10 && (
+                    <div className="top10-badge">
+                      <p>TOP</p>
+                      <p>10</p>
+                    </div>
+                  )}
+                  {movie.badge && (
+                    <div className="fresh-episode-badge">
+                      {movie.badge}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            <button 
+              className="button-slide prev-button" 
+              onClick={() => handleCarouselScroll(3, -1)}
+            >
+              ‹
+            </button>
+            <button 
+              className="button-slide next-button" 
+              onClick={() => handleCarouselScroll(3, 1)}
+            >
+              ›
+            </button>
+          </div>
+        </div>
+      </div> 
+
 
       <div className='scaffold'><Footer /></div>
     </>
